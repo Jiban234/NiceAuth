@@ -178,7 +178,7 @@ export const sendVerifyOtp = async (req, res) => {
     user.verifyOtp = otp;
     user.verifyOtpExpireAt = Date.now() + 24 * 60 * 60 * 1000;
 
-    await user.save;
+    await user.save();
 
     // send this otp in mail to verify the user in frontend
     const mailOptions = {
@@ -294,7 +294,7 @@ export const sendResetOtp = async(req,res)=>{
     user.resetOtpOtp = otp;
     user.resetOtpExpireAt = Date.now() + 15 * 60 * 1000;
 
-    await user.save;
+    await user.save();
 
     // send this otp in email to reset password
     const mailOptions = {
