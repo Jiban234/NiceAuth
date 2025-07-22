@@ -206,7 +206,7 @@ export const sendVerifyOtp = async (req, res) => {
 export const verifyEmail = async (req, res) => {
   const { userId, otp } = req.body;
   // check for valid details
-  if (!userId || otp) {
+  if (!userId || !otp) {
     res.json({
       success: false,
       message: "missing details",
