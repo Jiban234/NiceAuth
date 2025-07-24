@@ -4,14 +4,20 @@ import axios from "axios";
 
 export const AppContext = createContext();
 export const AppContextProvider = (props) => {
+
+   axios.defaults.withCredentials = true;
   const backendurl = import.meta.env.VITE_BACKEND_URL;
 
   const [isLoggedin, setIsLoggedin] = useState(false);
   const [userData, setUserData] = useState(null);
 
+     
+
   const getAuthState = async () => {
     try {
-        const {data} = await axios.get(backendurl + 'api/auth/is-auth');
+        const {data} = await axios.get(backendurl + "/api/auth/is-auth",{
+        withCredentials: true,
+      });
         if(data.success){
             setIsLoggedin(true);
             await getUserData();
@@ -33,9 +39,13 @@ export const AppContextProvider = (props) => {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
+  if (backendurl) {
     getAuthState();
-  },[])
+  } else {
+    toast.error("Backend URL is not set!");
+  }
+}, []);
 
   const value = {
     backendurl,
