@@ -46,6 +46,7 @@ const Login = () => {
           navigate("/");
         } else {
           toast.error(data.message);
+          setPassword("");  //  Clear password field on failure
         }
       }
     } catch (error) {
