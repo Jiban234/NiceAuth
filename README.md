@@ -2,9 +2,7 @@
 
 A full-stack authentication system built with React, Node.js, Express, and MongoDB. Features include user registration, login, email verification, and password reset functionality.
 
-![NiceAuth Platform](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-
+Version: 1.0.0 | License: MIT | Requirements: Node.js ≥18.0.0 
 ## Features
 
 - 🔐 **User Authentication** - Secure registration and login system
@@ -273,7 +271,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Author
 
 **Jiban Jyoti Das**
-- GitHub: [@yourusername](https://github.com/jiban234)
+- GitHub: [@Jiban234](https://github.com/jiban234)
 
 ## Acknowledgments
 
